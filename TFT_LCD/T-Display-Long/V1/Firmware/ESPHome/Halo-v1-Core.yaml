@@ -946,7 +946,7 @@ button:
     id: set_SCD40_calibrate
     on_press:
       - scd4x.perform_forced_calibration:
-          value: 420
+          value: 426
           id: scd40
 
   - platform: template
