@@ -1311,121 +1311,18 @@ lvgl:
               - 180, 352
             line_width: 1
             line_color: 0x00dfff
-# CO box
+# NOx box
         - label:
-            id: co_label
-            align: LEFT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: 2
-            y: 41
-            text: "CO:"               
-        - label:
-            id: co_value
-            align: RIGHT_MID
-            text_font: montserrat_28
-            text_color: my_white
-            long_mode: WRAP
-            x: -51
-            y: 53
-            text: "000.0" 
-        - label:
-            id: co_units
-            align: RIGHT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: -2
-            y: 53
-            text: "PPM"                     
-        - line:
-            points:
-              - 0, 393
-              - 180, 393
-            line_width: 1
-            line_color: 0x00dfff
-# Ethanol box
-        - label:
-            id: ethanol_label
-            align: LEFT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: SCROLL
-            width: 40
-            x: 2
-            y: 82
-            text: "C2H5OH:"           
-        - label:
-            id: ethanol_value
-            align: RIGHT_MID
-            text_font: montserrat_28
-            text_color: my_white
-            long_mode: WRAP
-            x: -51
-            y: 94
-            text: "000.0" 
-        - label:
-            id: ethanol_units
-            align: RIGHT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: -2
-            y: 94
-            text: "PPM"                     
-        - line:
-            points:
-              - 0, 434
-              - 180, 434
-            line_width: 1
-            line_color: 0x00dfff
-# Hydrogen box
-        - label:
-            id: h2_label
-            align: LEFT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: 2
-            y: 124
-            text: "H2:"              
-        - label:
-            id: h2_value
-            align: RIGHT_MID
-            text_font: montserrat_28
-            text_color: my_white
-            long_mode: WRAP
-            x: -51
-            y: 135
-            text: "000.0" 
-        - label:
-            id: h2_units
-            align: RIGHT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: -2
-            y: 135
-            text: "PPM"                     
-        - line:
-            points:
-              - 0, 475
-              - 180, 475
-            line_width: 1
-            line_color: 0x00dfff
-# NO2 box
-        - label:
-            id: no2_label
+            id: nox_label
             align: LEFT_MID
             text_font: montserrat_14
             text_color: my_white
             long_mode: WRAP
             x: 2
             y: 165
-            text: "NO2:"              
+            text: "NOx:"              
         - label:
-            id: no2_value
+            id: nox_value
             align: RIGHT_MID
             text_font: montserrat_28
             text_color: my_white
@@ -1434,7 +1331,7 @@ lvgl:
             y: 176
             text: "000.0" 
         - label:
-            id: no2_units
+            id: nox_units
             align: RIGHT_MID
             text_font: montserrat_14
             text_color: my_white
@@ -1448,74 +1345,211 @@ lvgl:
               - 180, 516
             line_width: 1
             line_color: 0x00dfff
+# CO box
+#        - label:
+#            id: co_label
+#            align: LEFT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: 2
+#            y: 41
+#            text: "CO:"               
+#        - label:
+#            id: co_value
+#            align: RIGHT_MID
+#            text_font: montserrat_28
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -51
+#            y: 53
+#            text: "000.0" 
+#        - label:
+#            id: co_units
+#            align: RIGHT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -2
+#            y: 53
+#            text: "PPM"                     
+#        - line:
+#            points:
+#              - 0, 393
+#              - 180, 393
+#            line_width: 1
+#            line_color: 0x00dfff
+# Ethanol box
+#        - label:
+#            id: ethanol_label
+#            align: LEFT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: SCROLL
+#            width: 40
+#            x: 2
+#            y: 82
+#            text: "C2H5OH:"           
+#        - label:
+#            id: ethanol_value
+#            align: RIGHT_MID
+#            text_font: montserrat_28
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -51
+#            y: 94
+#            text: "000.0" 
+#        - label:
+#            id: ethanol_units
+#            align: RIGHT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -2
+#            y: 94
+#            text: "PPM"                     
+#        - line:
+#            points:
+#              - 0, 434
+#              - 180, 434
+#            line_width: 1
+#            line_color: 0x00dfff
+# Hydrogen box
+#        - label:
+#            id: h2_label
+#            align: LEFT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: 2
+#            y: 124
+#            text: "H2:"              
+#        - label:
+#            id: h2_value
+#            align: RIGHT_MID
+#            text_font: montserrat_28
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -51
+#            y: 135
+#            text: "000.0" 
+#        - label:
+#            id: h2_units
+#            align: RIGHT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -2
+#            y: 135
+#            text: "PPM"                     
+#        - line:
+#            points:
+#              - 0, 475
+#              - 180, 475
+#            line_width: 1
+#            line_color: 0x00dfff
+# NO2 box
+#        - label:
+#            id: no2_label
+#            align: LEFT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: 2
+#            y: 165
+#            text: "NO2:"              
+#        - label:
+#            id: no2_value
+#            align: RIGHT_MID
+#            text_font: montserrat_28
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -51
+#            y: 176
+#            text: "000.0" 
+#        - label:
+#            id: no2_units
+#            align: RIGHT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -2
+#            y: 176
+#            text: "PPM"                     
+#        - line:
+#            points:
+#              - 0, 516
+#              - 180, 516
+#            line_width: 1
+#            line_color: 0x00dfff
 # NH3 box
-        - label:
-            id: nh3_label
-            align: LEFT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: 2
-            y: 206
-            text: "NH3:"              
-        - label:
-            id: nh3_value
-            align: RIGHT_MID
-            text_font: montserrat_28
-            text_color: my_white
-            long_mode: WRAP
-            x: -51
-            y: 217
-            text: "000.0" 
-        - label:
-            id: nh3_units
-            align: RIGHT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: -2
-            y: 217
-            text: "PPM"                     
-        - line:
-            points:
-              - 0, 557
-              - 180, 557
-            line_width: 1
-            line_color: 0x00dfff
+#        - label:
+#            id: nh3_label
+#            align: LEFT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: 2
+#            y: 206
+#            text: "NH3:"              
+#        - label:
+#            id: nh3_value
+#            align: RIGHT_MID
+#            text_font: montserrat_28
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -51
+#            y: 217
+#            text: "000.0" 
+#        - label:
+#            id: nh3_units
+#            align: RIGHT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -2
+#            y: 217
+#            text: "PPM"                     
+#        - line:
+#            points:
+#              - 0, 557
+#              - 180, 557
+#            line_width: 1
+#            line_color: 0x00dfff
 # CH4 box
-        - label:
-            id: ch4_label
-            align: LEFT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: 2
-            y: 247
-            text: "CH4:"              
-        - label:
-            id: ch4_value
-            align: RIGHT_MID
-            text_font: montserrat_28
-            text_color: my_white
-            long_mode: WRAP
-            x: -51
-            y: 258
-            text: "000.0" 
-        - label:
-            id: ch4_units
-            align: RIGHT_MID
-            text_font: montserrat_14
-            text_color: my_white
-            long_mode: WRAP
-            x: -2
-            y: 258
-            text: "PPM"                     
-        - line:
-            points:
-              - 0, 598
-              - 180, 598
-            line_width: 1
-            line_color: 0x00dfff
+#        - label:
+#            id: ch4_label
+#            align: LEFT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: 2
+#            y: 247
+#            text: "CH4:"              
+#       - label:
+#           id: ch4_value
+#           align: RIGHT_MID
+#            text_font: montserrat_28
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -51
+#            y: 258
+#            text: "000.0" 
+#        - label:
+#            id: ch4_units
+#            align: RIGHT_MID
+#            text_font: montserrat_14
+#            text_color: my_white
+#            long_mode: WRAP
+#            x: -2
+#            y: 258
+#            text: "PPM"                     
+#        - line:
+#            points:
+#              - 0, 598
+#              - 180, 598
+#            line_width: 1
+#            line_color: 0x00dfff
 # RH box
         - label:
             id: rh_label
