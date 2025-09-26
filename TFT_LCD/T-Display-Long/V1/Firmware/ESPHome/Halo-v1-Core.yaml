@@ -879,7 +879,54 @@ sensor:
                           else:
                             - lvgl.label.update:
                                 id: voc_value
-                                text_color: my_red                      
+                                text_color: my_red
+    nox:
+      name: "SEN55 NOX"
+      id: sen55_nox
+      algorithm_tuning:
+        #https://sensirion.com/media/documents/25AB572C/62B463AA/Sensirion_Engineering_Guidelines_SEN5x.pdf
+        index_offset: 1
+        learning_time_offset_hours: 72
+        learning_time_gain_hours: 72
+        gating_max_duration_minutes: 720
+        std_initial: 50
+        gain_factor: 230
+      on_value:
+        then:
+          - lvgl.label.update:
+              id: nox_value
+              text: !lambda |-
+                static char buffer[10];
+                snprintf(buffer, sizeof(buffer), "%3d", (int)x);
+                return buffer;
+          - if:
+              condition:
+                lambda: "return x < 150;"
+              then:
+                - lvgl.label.update:
+                    id: nox_value
+                    text_color: my_green
+              else:
+                - if:
+                    condition:
+                      lambda: "return x <= 250;"
+                    then:
+                      - lvgl.label.update:
+                          id: nox_value
+                          text_color: my_yellow
+                    else:
+                      - if:
+                          condition:
+                            lambda: "return x <= 400;"
+                          then:
+                            - lvgl.label.update:
+                                id: nox_value
+                                text_color: my_orange
+                          else:
+                            - lvgl.label.update:
+                                id: nox_value
+                                text_color: my_red    
+                                
     i2c_id: lily_i2c
     address: 0x69
     update_interval: 10s    
