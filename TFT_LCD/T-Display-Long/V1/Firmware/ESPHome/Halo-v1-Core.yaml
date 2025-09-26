@@ -380,231 +380,231 @@ sensor:
     i2c_id: lily_i2c
     ambient_pressure_compensation_source: bme280pressure
 
-  - platform: mics_4514
-    id: mics4514
-    nitrogen_dioxide:
-      name: Nitrogen Dioxide
-      id: "no2"
-      on_value:
-        then:
-          - lvgl.label.update:
-              id: no2_value
-              text: !lambda |-
-                static char buffer[10];
-                snprintf(buffer, sizeof(buffer), "%.02f", x);
-                return buffer;
-          - if:
-              condition:
-                lambda: "return x <= 0.03;"  # Safe level typical indoors (ppm)
-              then:
-                - lvgl.label.update:
-                    id: no2_value
-                    text_color: my_green
-              else:
-                - if:
-                    condition:
-                      lambda: "return x <= 0.06;"  # Slightly elevated level (ppm)
-                    then:
-                      - lvgl.label.update:
-                          id: no2_value
-                          text_color: my_yellow
-                    else:
-                      - if:
-                          condition:
-                            lambda: "return x <= 0.1;"  # Moderately high level (ppm)
-                          then:
-                            - lvgl.label.update:
-                                id: no2_value
-                                text_color: my_orange
-                          else:
-                            - lvgl.label.update:
-                                id: no2_value
-                                text_color: my_red  # High level, unsafe indoors (ppm)                          
-    carbon_monoxide:
-      name: Carbon Monoxide
-      id: "co"
-      on_value:
-        then:
-          - lvgl.label.update:
-              id: co_value
-              text: !lambda |-
-                static char buffer[10];
-                snprintf(buffer, sizeof(buffer), "%.02f", x);
-                return buffer;
-          - if:
-              condition:
-                lambda: "return x <= 15;"
-              then:
-                - lvgl.label.update:
-                    id: co_value
-                    text_color: my_green
-              else:
-                - if:
-                    condition:
-                      lambda: "return x <= 30;"
-                    then:
-                      - lvgl.label.update:
-                          id: co_value
-                          text_color: my_yellow
-                    else:
-                      - if:
-                          condition:
-                            lambda: "return x <= 36;"
-                          then:
-                            - lvgl.label.update:
-                                id: co_value
-                                text_color: my_orange
-                          else:
-                            - lvgl.label.update:
-                                id: co_value
-                                text_color: my_red                      
-    hydrogen:
-      name: Hydrogen
-      id: "h2"
-      on_value:
-        then:
-          - lvgl.label.update:
-              id: h2_value
-              text: !lambda |-
-                static char buffer[10];
-                snprintf(buffer, sizeof(buffer), "%.02f", x);
-                return buffer;
-          - if:
-              condition:
-                lambda: "return x <= 0.4;"  # Safe level typical indoors
-              then:
-                - lvgl.label.update:
-                    id: h2_value
-                    text_color: my_green
-              else:
-                - if:
-                    condition:
-                      lambda: "return x <= 1.0;"  # Slightly elevated level
-                    then:
-                      - lvgl.label.update:
-                          id: h2_value
-                          text_color: my_yellow
-                    else:
-                      - if:
-                          condition:
-                            lambda: "return x <= 2.0;"  # Moderately high level
-                          then:
-                            - lvgl.label.update:
-                                id: h2_value
-                                text_color: my_orange
-                          else:
-                            - lvgl.label.update:
-                                id: h2_value
-                                text_color: my_red  # High level, unsafe indoors                       
-    methane:
-      name: Methane
-      id: "ch4"
-      on_value:
-        then:
-          - lvgl.label.update:
-              id: ch4_value
-              text: !lambda |-
-                static char buffer[10];
-                snprintf(buffer, sizeof(buffer), "%.02f", x);
-                return buffer;
-          - if:
-              condition:
-                lambda: "return x <= 2.0;"  # Typical safe level
-              then:
-                - lvgl.label.update:
-                    id: ch4_value
-                    text_color: my_green
-              else:
-                - if:
-                    condition:
-                      lambda: "return x <= 10.0;"  # Elevated but not critical
-                    then:
-                      - lvgl.label.update:
-                          id: ch4_value
-                          text_color: my_yellow
-                    else:
-                      - lvgl.label.update:
-                          id: ch4_value
-                          text_color: my_red  # Critical level                                        
-    ethanol:
-      name: Ethanol
-      id: "ethanol"
-      on_value:
-        then:
-          - lvgl.label.update:
-              id: ethanol_value
-              text: !lambda |-
-                static char buffer[10];
-                snprintf(buffer, sizeof(buffer), "%.02f", x);
-                return buffer;
-          - if:
-              condition:
-                lambda: "return x <= 0.5;"  # Safe level
-              then:
-                - lvgl.label.update:
-                    id: ethanol_value
-                    text_color: my_green
-              else:
-                - if:
-                    condition:
-                      lambda: "return x <= 1.5;"  # Slightly elevated
-                    then:
-                      - lvgl.label.update:
-                          id: ethanol_value
-                          text_color: my_yellow
-                    else:
-                      - if:
-                          condition:
-                            lambda: "return x <= 3.0;"  # Moderate level
-                          then:
-                            - lvgl.label.update:
-                                id: ethanol_value
-                                text_color: my_orange
-                          else:
-                            - lvgl.label.update:
-                                id: ethanol_value
-                                text_color: my_red  # High level                       
-    ammonia:
-      name: Ammonia
-      id: "nh3"
-      on_value:
-        then:
-          - lvgl.label.update:
-              id: nh3_value
-              text: !lambda |-
-                static char buffer[10];
-                snprintf(buffer, sizeof(buffer), "%.02f", x);
-                return buffer;
-          - if:
-              condition:
-                lambda: "return x <= 0.5;"  # Safe level typical indoors
-              then:
-                - lvgl.label.update:
-                    id: nh3_value
-                    text_color: my_green
-              else:
-                - if:
-                    condition:
-                      lambda: "return x <= 1.0;"  # Slightly elevated level
-                    then:
-                      - lvgl.label.update:
-                          id: nh3_value
-                          text_color: my_yellow
-                    else:
-                      - if:
-                          condition:
-                            lambda: "return x <= 2.0;"  # Moderately high level
-                          then:
-                            - lvgl.label.update:
-                                id: nh3_value
-                                text_color: my_orange
-                          else:
-                            - lvgl.label.update:
-                                id: nh3_value
-                                text_color: my_red  # High level, unsafe indoors                            
-    update_interval: 10s
-    i2c_id: lily_i2c
-    address: 0x75
+#  - platform: mics_4514
+#    id: mics4514
+#    nitrogen_dioxide:
+#      name: Nitrogen Dioxide
+#      id: "no2"
+#      on_value:
+#        then:
+#          - lvgl.label.update:
+#              id: no2_value
+#              text: !lambda |-
+#                static char buffer[10];
+#                snprintf(buffer, sizeof(buffer), "%.02f", x);
+#                return buffer;
+#          - if:
+#              condition:
+#                lambda: "return x <= 0.03;"  # Safe level typical indoors (ppm)
+#              then:
+#                - lvgl.label.update:
+#                    id: no2_value
+#                    text_color: my_green
+#              else:
+#                - if:
+#                    condition:
+#                      lambda: "return x <= 0.06;"  # Slightly elevated level (ppm)
+#                    then:
+#                      - lvgl.label.update:
+#                          id: no2_value
+#                          text_color: my_yellow
+#                    else:
+#                      - if:
+#                          condition:
+#                            lambda: "return x <= 0.1;"  # Moderately high level (ppm)
+#                          then:
+#                            - lvgl.label.update:
+#                                id: no2_value
+#                                text_color: my_orange
+#                          else:
+#                            - lvgl.label.update:
+#                                id: no2_value
+#                                text_color: my_red  # High level, unsafe indoors (ppm)                          
+#    carbon_monoxide:
+#      name: Carbon Monoxide
+#      id: "co"
+#      on_value:
+#        then:
+#          - lvgl.label.update:
+#              id: co_value
+#              text: !lambda |-
+#                static char buffer[10];
+#                snprintf(buffer, sizeof(buffer), "%.02f", x);
+#                return buffer;
+#          - if:
+#              condition:
+#                lambda: "return x <= 15;"
+#              then:
+#                - lvgl.label.update:
+#                    id: co_value
+#                    text_color: my_green
+#              else:
+#                - if:
+#                    condition:
+#                      lambda: "return x <= 30;"
+#                    then:
+#                      - lvgl.label.update:
+#                          id: co_value
+#                          text_color: my_yellow
+#                    else:
+#                      - if:
+#                          condition:
+#                            lambda: "return x <= 36;"
+#                          then:
+#                            - lvgl.label.update:
+#                                id: co_value
+#                                text_color: my_orange
+#                          else:
+#                            - lvgl.label.update:
+#                                id: co_value
+#                                text_color: my_red                      
+#    hydrogen:
+#      name: Hydrogen
+#      id: "h2"
+#      on_value:
+#        then:
+#          - lvgl.label.update:
+#              id: h2_value
+#              text: !lambda |-
+#                static char buffer[10];
+#                snprintf(buffer, sizeof(buffer), "%.02f", x);
+#                return buffer;
+#          - if:
+#              condition:
+#                lambda: "return x <= 0.4;"  # Safe level typical indoors
+#              then:
+#                - lvgl.label.update:
+#                    id: h2_value
+#                    text_color: my_green
+#              else:
+#                - if:
+#                    condition:
+#                      lambda: "return x <= 1.0;"  # Slightly elevated level
+#                    then:
+#                      - lvgl.label.update:
+#                          id: h2_value
+#                          text_color: my_yellow
+#                    else:
+#                      - if:
+#                          condition:
+#                            lambda: "return x <= 2.0;"  # Moderately high level
+#                          then:
+#                            - lvgl.label.update:
+#                                id: h2_value
+#                                text_color: my_orange
+#                          else:
+#                            - lvgl.label.update:
+#                                id: h2_value
+#                                text_color: my_red  # High level, unsafe indoors                       
+#    methane:
+#      name: Methane
+#      id: "ch4"
+#      on_value:
+#        then:
+#          - lvgl.label.update:
+#              id: ch4_value
+#              text: !lambda |-
+#                static char buffer[10];
+#                snprintf(buffer, sizeof(buffer), "%.02f", x);
+#                return buffer;
+#          - if:
+#              condition:
+#                lambda: "return x <= 2.0;"  # Typical safe level
+#              then:
+#                - lvgl.label.update:
+#                    id: ch4_value
+#                    text_color: my_green
+#              else:
+#                - if:
+#                    condition:
+#                      lambda: "return x <= 10.0;"  # Elevated but not critical
+#                    then:
+#                      - lvgl.label.update:
+#                          id: ch4_value
+#                          text_color: my_yellow
+#                    else:
+#                      - lvgl.label.update:
+#                          id: ch4_value
+#                          text_color: my_red  # Critical level                                        
+#    ethanol:
+#      name: Ethanol
+#      id: "ethanol"
+#      on_value:
+#        then:
+#          - lvgl.label.update:
+#              id: ethanol_value
+#              text: !lambda |-
+#                static char buffer[10];
+#                snprintf(buffer, sizeof(buffer), "%.02f", x);
+#                return buffer;
+#          - if:
+#              condition:
+#                lambda: "return x <= 0.5;"  # Safe level
+#              then:
+#                - lvgl.label.update:
+#                    id: ethanol_value
+#                    text_color: my_green
+#              else:
+#                - if:
+#                    condition:
+#                      lambda: "return x <= 1.5;"  # Slightly elevated
+#                    then:
+#                      - lvgl.label.update:
+#                          id: ethanol_value
+#                          text_color: my_yellow
+#                    else:
+#                      - if:
+#                          condition:
+#                            lambda: "return x <= 3.0;"  # Moderate level
+#                          then:
+#                            - lvgl.label.update:
+#                                id: ethanol_value
+#                                text_color: my_orange
+#                          else:
+#                            - lvgl.label.update:
+#                                id: ethanol_value
+#                                text_color: my_red  # High level                       
+#    ammonia:
+#      name: Ammonia
+#      id: "nh3"
+#      on_value:
+#        then:
+#          - lvgl.label.update:
+#              id: nh3_value
+#              text: !lambda |-
+#                static char buffer[10];
+#                snprintf(buffer, sizeof(buffer), "%.02f", x);
+#                return buffer;
+#          - if:
+#              condition:
+#                lambda: "return x <= 0.5;"  # Safe level typical indoors
+#              then:
+#                - lvgl.label.update:
+#                    id: nh3_value
+#                    text_color: my_green
+#              else:
+#                - if:
+#                    condition:
+#                      lambda: "return x <= 1.0;"  # Slightly elevated level
+#                    then:
+#                      - lvgl.label.update:
+#                          id: nh3_value
+#                          text_color: my_yellow
+#                    else:
+#                      - if:
+#                          condition:
+#                            lambda: "return x <= 2.0;"  # Moderately high level
+#                          then:
+#                            - lvgl.label.update:
+#                                id: nh3_value
+#                                text_color: my_orange
+#                          else:
+#                            - lvgl.label.update:
+#                                id: nh3_value
+#                                text_color: my_red  # High level, unsafe indoors                            
+#    update_interval: 10s
+#    i2c_id: lily_i2c
+#    address: 0x75
 
   - platform: bme280_i2c
     i2c_id: lily_i2c
