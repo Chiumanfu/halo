@@ -1001,7 +1001,7 @@ light:
     id: rgb_light
     rgb_order: GRB
     pin: GPIO47
-    num_leds: 12
+    num_leds: 16
     chipset: WS2812
     restore_mode: RESTORE_AND_OFF
     effects:
