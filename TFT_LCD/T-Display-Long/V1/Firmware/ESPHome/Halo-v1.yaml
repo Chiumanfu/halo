@@ -26,7 +26,10 @@ ota:
 wifi:
   on_connect:
     - delay: 5s # Gives time for improv results to be transmitted
-
+  manual_ip:
+    static_ip: 192.168.1.113
+    gateway: 192.168.1.254
+    subnet: 255.255.255.0
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Halo Hotspot"
