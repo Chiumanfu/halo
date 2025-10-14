@@ -12,7 +12,7 @@ esphome:
   min_version: 2025.6.2
 
   project:
-    name: "yashmulgaonkar.Halo-v1"
+    name: "Chiumanfu.Halo-v1"
     version: "${version}"
 
 dashboard_import:
