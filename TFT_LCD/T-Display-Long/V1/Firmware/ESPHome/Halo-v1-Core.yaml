@@ -607,7 +607,8 @@ sensor:
 #    address: 0x75
 
   - platform: bme280_i2c
-    i2c_id: lily_i2c
+#    i2c_id: lily_i2c
+    i2c_id: touch_i2c
     temperature:
       name: "BME280 Temperature"
       oversampling: 2x
