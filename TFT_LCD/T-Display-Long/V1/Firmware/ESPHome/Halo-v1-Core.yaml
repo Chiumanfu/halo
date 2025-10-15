@@ -317,12 +317,12 @@ sensor:
   - platform: uptime
     name: Uptime
     id: sys_uptime
-    update_interval: 60s
+    update_interval: 600s
 
   - platform: wifi_signal
     name: RSSI
     id: wifi_signal_db
-    update_interval: 60s
+    update_interval: 600s
     entity_category: "diagnostic"
 
   - platform: template
@@ -611,16 +611,24 @@ sensor:
     i2c_id: touch_i2c
     temperature:
       name: "BME280 Temperature"
-      oversampling: 2x
+      oversampling: 16x
+      filters:
+        - offset: 0.0
       # filters:
       #   - lambda: |-
       #       return x;  
     pressure:
       name: "BME280 Pressure"
+      oversampling: 16x
+      filters:
+        - offset: 0.0
       id: bme280pressure
     humidity:
       name: "BME280 Humidity"    
-
+      oversampling: 16x
+      filters:
+        - offset: 0.0
+        
   - platform: sen5x
     id: sen55
     pm_1_0:
