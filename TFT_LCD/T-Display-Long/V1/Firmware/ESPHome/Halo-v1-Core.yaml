@@ -611,6 +611,7 @@ sensor:
     i2c_id: touch_i2c
     temperature:
       name: "BME280 Temperature"
+      id: bme280temperature_value
       oversampling: 16x
       filters:
         - offset: 0.0
@@ -619,12 +620,14 @@ sensor:
       #       return x;  
     pressure:
       name: "BME280 Pressure"
+      id: bme280pressure_value
       oversampling: 16x
       filters:
         - offset: 0.0
-      id: bme280pressure
+      
     humidity:
-      name: "BME280 Humidity"    
+      name: "BME280 Humidity"
+      id: bme280humidity_value
       oversampling: 16x
       filters:
         - offset: 0.0
@@ -1109,7 +1112,7 @@ lvgl:
             long_mode: WRAP
             x: -8
             y: -234
-            text: "\u00B0F"                     
+            text: "\u00B0C"                     
         - line:
             points:
               - 0, 106
@@ -1320,6 +1323,109 @@ lvgl:
               - 180, 352
             line_width: 1
             line_color: 0x00dfff
+# BME temp box
+        - label:
+            id: temperatureb_label
+            align: LEFT_MID
+            text_font: montserrat_14
+            text_color: my_white
+            long_mode: WRAP
+            x: 2
+            y: 41
+            text: "TEMP-B:"               
+        - label:
+            id: bme280temperature_value
+            align: RIGHT_MID
+            text_font: montserrat_28
+            text_color: my_white
+            long_mode: WRAP
+            x: -51
+            y: 53
+            text: "000.0" 
+        - label:
+            id: temperature_units
+            align: RIGHT_MID
+            text_font: montserrat_14
+            text_color: my_white
+            long_mode: WRAP
+            x: -2
+            y: 53
+            text: "\u00B0C"                     
+        - line:
+            points:
+              - 0, 393
+              - 180, 393
+            line_width: 1
+            line_color: 0x00dfff
+# Humidity box
+        - label:
+            id: humidityb_label
+            align: LEFT_MID
+            text_font: montserrat_14
+            text_color: my_white
+            long_mode: SCROLL
+            width: 40
+            x: 2
+            y: 82
+            text: "HUM-B:"           
+        - label:
+            id: bme280humidity_value
+            align: RIGHT_MID
+            text_font: montserrat_28
+            text_color: my_white
+            long_mode: WRAP
+            x: -51
+            y: 94
+            text: "000.0" 
+        - label:
+            id: humidity_units
+            align: RIGHT_MID
+            text_font: montserrat_14
+            text_color: my_white
+            long_mode: WRAP
+            x: -2
+            y: 94
+            text: "%"                     
+        - line:
+            points:
+              - 0, 434
+              - 180, 434
+            line_width: 1
+            line_color: 0x00dfff
+# Pressure box
+        - label:
+            id: pressure_label
+            align: LEFT_MID
+            text_font: montserrat_14
+            text_color: my_white
+            long_mode: WRAP
+            x: 2
+            y: 124
+            text: "PRES:"              
+        - label:
+            id: bme280pressure_value
+            align: RIGHT_MID
+            text_font: montserrat_28
+            text_color: my_white
+            long_mode: WRAP
+            x: -51
+            y: 135
+            text: "000.0" 
+        - label:
+            id: pressure_units
+            align: RIGHT_MID
+            text_font: montserrat_14
+            text_color: my_white
+            long_mode: WRAP
+            x: -2
+            y: 135
+            text: "hPa"                     
+        - line:
+            points:
+              - 0, 475
+              - 180, 475
+            line_width: 1
+            line_color: 0x00dfff
 # NOx box
         - label:
             id: nox_label
@@ -1354,109 +1460,7 @@ lvgl:
               - 180, 516
             line_width: 1
             line_color: 0x00dfff
-# CO box
-#        - label:
-#            id: co_label
-#            align: LEFT_MID
-#            text_font: montserrat_14
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: 2
-#            y: 41
-#            text: "CO:"               
-#        - label:
-#            id: co_value
-#            align: RIGHT_MID
-#            text_font: montserrat_28
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: -51
-#            y: 53
-#            text: "000.0" 
-#        - label:
-#            id: co_units
-#            align: RIGHT_MID
-#            text_font: montserrat_14
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: -2
-#            y: 53
-#            text: "PPM"                     
-#        - line:
-#            points:
-#              - 0, 393
-#              - 180, 393
-#            line_width: 1
-#            line_color: 0x00dfff
-# Ethanol box
-#        - label:
-#            id: ethanol_label
-#            align: LEFT_MID
-#            text_font: montserrat_14
-#            text_color: my_white
-#            long_mode: SCROLL
-#            width: 40
-#            x: 2
-#            y: 82
-#            text: "C2H5OH:"           
-#        - label:
-#            id: ethanol_value
-#            align: RIGHT_MID
-#            text_font: montserrat_28
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: -51
-#            y: 94
-#            text: "000.0" 
-#        - label:
-#            id: ethanol_units
-#            align: RIGHT_MID
-#            text_font: montserrat_14
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: -2
-#            y: 94
-#            text: "PPM"                     
-#        - line:
-#            points:
-#              - 0, 434
-#              - 180, 434
-#            line_width: 1
-#            line_color: 0x00dfff
-# Hydrogen box
-#        - label:
-#            id: h2_label
-#            align: LEFT_MID
-#            text_font: montserrat_14
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: 2
-#            y: 124
-#            text: "H2:"              
-#        - label:
-#            id: h2_value
-#            align: RIGHT_MID
-#            text_font: montserrat_28
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: -51
-#            y: 135
-#            text: "000.0" 
-#        - label:
-#            id: h2_units
-#            align: RIGHT_MID
-#            text_font: montserrat_14
-#            text_color: my_white
-#            long_mode: WRAP
-#            x: -2
-#            y: 135
-#            text: "PPM"                     
-#        - line:
-#            points:
-#              - 0, 475
-#              - 180, 475
-#            line_width: 1
-#            line_color: 0x00dfff
+
 # NO2 box
 #        - label:
 #            id: no2_label
