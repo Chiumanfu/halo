@@ -670,21 +670,14 @@ sensor:
                             - lvgl.label.update:
                                 id: bme280temperature_value
                                 text_color: my_red  # Extreme discomfort or unsafe (°C)
-
-        
       # filters:
       #   - lambda: |-
       #       return x;  
-    pressure:
-      name: "BME280 Pressure"
-      id: bme280pressure_value
-      oversampling: 16x
+      
+    humidity:
+      name: "BME280 Humidity"
       filters:
-        - offset: 0.0
-
-      name: "BME280 Pressure"
-      filters:
-        - lambda: return x - id(bme280_pressure_offset).state;
+        - lambda: return x - id(bme280_humidity_offset).state;
       accuracy_decimals: 0
       oversampling: 16x
       on_value:
@@ -725,10 +718,10 @@ sensor:
 
                                 
 
-    humidity:
-      name: "BME280 Humidity"
+    pressure:
+      name: "BME280 Pressure"
       filters:
-        - lambda: return x - id(bme280_humidity_offset).state;
+        - lambda: return x - id(bme280_pressure_offset).state;
       accuracy_decimals: 0
       oversampling: 16x
       on_value:
@@ -1510,7 +1503,7 @@ lvgl:
             y: 82
             text: "HUM-B:"           
         - label:
-            id: bme280humidity_value
+            id: bme280rh_value
             align: RIGHT_MID
             text_font: montserrat_28
             text_color: my_white
