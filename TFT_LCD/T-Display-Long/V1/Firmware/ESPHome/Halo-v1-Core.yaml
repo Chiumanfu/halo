@@ -611,10 +611,67 @@ sensor:
     i2c_id: touch_i2c
     temperature:
       name: "BME280 Temperature"
-      id: bme280temperature_value
+      accuracy_decimals: 1
       oversampling: 16x
       filters:
-        - offset: 0.0
+        - offset: !lambda return -1.0 * id(bme280_temperature_offset).state;
+      on_value:
+        then:
+          - if:
+              condition:
+                lambda: "return temp_unit_changed;"
+              then:
+                - lvgl.label.update:
+                    id: temperature_units
+                    text: !lambda |-
+                      if(id(display_temperature_unit).state == "Fahrenheit")
+                        return "\u00B0F";
+                      else if(id(display_temperature_unit).state == "Kelvin")
+                        return "K";
+                      return "\u00B0C";
+                - globals.set:
+                    id: bme280temp_unit_changed
+                    value: "false"
+          - lvgl.label.update:
+              id: bme280temperature_value
+              text: !lambda |-
+                static char buffer[10];
+                if(id(display_temperature_unit).state == "Fahrenheit")
+                  snprintf(buffer, sizeof(buffer), "%.01f", (x * 9.0 / 5.0) + 32.0);
+                else if(id(display_temperature_unit).state == "Kelvin")
+                  snprintf(buffer, sizeof(buffer), "%.01f", x + 273.15);
+                else
+                  snprintf(buffer, sizeof(buffer), "%.01f", x);
+                return buffer;
+          - if:
+              condition:
+                lambda: "return x >= 18 && x <= 24;"  # Comfortable temperature range (°C)
+              then:
+                - lvgl.label.update:
+                    id: bme280temperature_value
+                    text_color: my_green
+              else:
+                - if:
+                    condition:
+                      lambda: "return (x > 24 && x <= 27) || (x >= 16 && x < 18);"  # Slightly uncomfortable (°C)
+                    then:
+                      - lvgl.label.update:
+                          id: bme280temperature_value
+                          text_color: my_yellow
+                    else:
+                      - if:
+                          condition:
+                            lambda: "return (x > 27 && x <= 30) || (x >= 10 && x < 16);"  # Moderately uncomfortable (°C)
+                          then:
+                            - lvgl.label.update:
+                                id: bme280temperature_value
+                                text_color: my_orange
+                          else:
+                            - lvgl.label.update:
+                                id: bme280temperature_value
+                                text_color: my_red  # Extreme discomfort or unsafe (°C)
+
+        
       # filters:
       #   - lambda: |-
       #       return x;  
@@ -624,13 +681,91 @@ sensor:
       oversampling: 16x
       filters:
         - offset: 0.0
-      
+
+      name: "BME280 Pressure"
+      filters:
+        - lambda: return x - id(bme280_pressure_offset).state;
+      accuracy_decimals: 0
+      oversampling: 16x
+      on_value:
+        then:
+          - lvgl.label.update:
+              id: bme280rh_value
+              text: !lambda |-
+                static char buffer[10];
+                snprintf(buffer, sizeof(buffer), "%d", (int)x);
+                return buffer;
+          - if:
+              condition:
+                lambda: "return x >= 30 && x <= 50;"  # Optimal indoor comfort range (%)
+              then:
+                - lvgl.label.update:
+                    id: bme280rh_value
+                    text_color: my_green
+              else:
+                - if:
+                    condition:
+                      lambda: "return (x > 50 && x <= 60) || (x >= 20 && x < 30);"  # Slightly out of comfort range (%)
+                    then:
+                      - lvgl.label.update:
+                          id: bme280rh_value
+                          text_color: my_yellow
+                    else:
+                      - if:
+                          condition:
+                            lambda: "return (x > 60 && x <= 70) || (x >= 10 && x < 20);"  # Moderately uncomfortable (%)
+                          then:
+                            - lvgl.label.update:
+                                id: bme280rh_value
+                                text_color: my_orange
+                          else:
+                            - lvgl.label.update:
+                                id: bme280rh_value
+                                text_color: my_red  # Very uncomfortable or potentially hazardous (%)  
+
+                                
+
     humidity:
       name: "BME280 Humidity"
-      id: bme280humidity_value
-      oversampling: 16x
       filters:
-        - offset: 0.0
+        - lambda: return x - id(bme280_humidity_offset).state;
+      accuracy_decimals: 0
+      oversampling: 16x
+      on_value:
+        then:
+          - lvgl.label.update:
+              id: bme280pressure_value
+              text: !lambda |-
+                static char buffer[10];
+                snprintf(buffer, sizeof(buffer), "%d", (int)x);
+                return buffer;
+          - if:
+              condition:
+                lambda: "return x >= 30 && x <= 50;"  # Optimal indoor comfort range (%)
+              then:
+                - lvgl.label.update:
+                    id: bme280pressure_value
+                    text_color: my_green
+              else:
+                - if:
+                    condition:
+                      lambda: "return (x > 50 && x <= 60) || (x >= 20 && x < 30);"  # Slightly out of comfort range (%)
+                    then:
+                      - lvgl.label.update:
+                          id: bme280pressure_value
+                          text_color: my_yellow
+                    else:
+                      - if:
+                          condition:
+                            lambda: "return (x > 60 && x <= 70) || (x >= 10 && x < 20);"  # Moderately uncomfortable (%)
+                          then:
+                            - lvgl.label.update:
+                                id: bme280pressure_value
+                                text_color: my_orange
+                          else:
+                            - lvgl.label.update:
+                                id: bme280pressure_value
+                                text_color: my_red  # Very uncomfortable or potentially hazardous (%)       
 
   - platform: bh1750
     name: "Illuminance"
