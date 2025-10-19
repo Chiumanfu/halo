@@ -622,7 +622,7 @@ sensor:
                 lambda: "return temp_unit_changed;"
               then:
                 - lvgl.label.update:
-                    id: temperature_units
+                    id: bme280temperature_units
                     text: !lambda |-
                       if(id(display_temperature_unit).state == "Fahrenheit")
                         return "\u00B0F";
@@ -1477,7 +1477,7 @@ lvgl:
             y: 53
             text: "000.0" 
         - label:
-            id: temperature_units
+            id: bme280temperature_units
             align: RIGHT_MID
             text_font: montserrat_14
             text_color: my_white
