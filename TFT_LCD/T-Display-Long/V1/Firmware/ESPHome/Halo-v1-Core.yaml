@@ -631,7 +631,13 @@ sensor:
       oversampling: 16x
       filters:
         - offset: 0.0
-        
+
+  - platform: bh1750
+    name: "Illuminance"
+    i2c_id: lily_i2c
+    address: 0x23
+    update_interval: 600s
+    
   - platform: sen5x
     id: sen55
     pm_1_0:
