@@ -317,12 +317,12 @@ sensor:
   - platform: uptime
     name: Uptime
     id: sys_uptime
-    update_interval: 60s
+    update_interval: 600s
 
   - platform: wifi_signal
     name: RSSI
     id: wifi_signal_db
-    update_interval: 60s
+    update_interval: 600s
     entity_category: "diagnostic"
 
   - platform: template
@@ -607,8 +607,7 @@ sensor:
 #    address: 0x75
 
   - platform: bme280_i2c
-#    i2c_id: lily_i2c
-    i2c_id: touch_i2c
+    i2c_id: lily_i2c
     temperature:
       name: "BME280 Temperature"
       accuracy_decimals: 1
@@ -760,11 +759,11 @@ sensor:
                                 id: bme280pressure_value
                                 text_color: my_red  # Very uncomfortable or potentially hazardous (%)       
 
-  - platform: bh1750
-    name: "Illuminance"
-    i2c_id: lily_i2c
-    address: 0x23
-    update_interval: 600s
+#  - platform: bh1750
+#    name: "Illuminance"
+#    i2c_id: lily_i2c
+#    address: 0x23
+#    update_interval: 60s
     
   - platform: sen5x
     id: sen55
@@ -1147,7 +1146,7 @@ light:
     id: rgb_light
     rgb_order: GRB
     pin: GPIO47
-    num_leds: 16
+    num_leds: 12
     chipset: WS2812
     restore_mode: RESTORE_AND_OFF
     effects:
@@ -1450,7 +1449,7 @@ lvgl:
             long_mode: WRAP
             x: -2
             y: 12
-            text: "IDX"                     
+            text: "INDEX"                     
         - line:
             points:
               - 0, 352
