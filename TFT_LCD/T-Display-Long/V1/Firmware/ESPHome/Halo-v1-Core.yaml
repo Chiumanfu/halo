@@ -976,7 +976,7 @@ lvgl:
         - label:
             id: aqi_label
             align: LEFT_MID
-            text_font: montserrat_28
+            text_font: montserrat_32
             text_color: my_black
             long_mode: WRAP
             x: 2
@@ -985,7 +985,7 @@ lvgl:
         - label:
             id: aqi_value
             align: LEFT_MID
-            text_font: montserrat_28
+            text_font: montserrat_32
             text_color: my_black
             long_mode: WRAP
             x: 90
