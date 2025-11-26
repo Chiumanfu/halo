@@ -386,6 +386,9 @@ sensor:
       name: "BME280 Temperature"
       accuracy_decimals: 1
       oversampling: 16x
+      accuracy_decimals: 1
+      filters:
+        - offset: 0.0
 #      filters:
 #        - offset: !lambda return -1.0 * id(bme280_temperature_offset).state;
 #      on_value:
@@ -453,6 +456,9 @@ sensor:
 #        - lambda: return x - id(bme280_humidity_offset).state;
       accuracy_decimals: 0
       oversampling: 16x
+      accuracy_decimals: 0
+      filters:
+        - offset: 0.0
 #      on_value:
 #        then:
 #          - lvgl.label.update:
@@ -496,6 +502,8 @@ sensor:
 #        - lambda: return x - id(bme280_pressure_offset).state;
       accuracy_decimals: 0
       oversampling: 16x
+      filters:
+        - offset: 0.0
       on_value:
         then:
           - lvgl.label.update:
