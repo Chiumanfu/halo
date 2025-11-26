@@ -925,7 +925,10 @@ light:
     effects:
       - addressable_rainbow:
           name: Addressable Rainbow
-
+      - addressable_scan:
+          name: Addressable Scan
+          move_interval: 100ms
+          scan_width: 1
   - platform: monochromatic
     output: backlight
     name: "Display Backlight"
