@@ -98,8 +98,6 @@ interval:
           - lvgl.widget.update:
               id: wifi_stat
               text_color: my_green
-#          - lvgl.widget.show:
-#              id: ym_image              
         else:
           - lvgl.widget.update:
               id: wifi_stat
@@ -963,15 +961,15 @@ lvgl:
             border_width: 0
         - label:
             id: aqi_label
-            text_font: montserrat_32
+            text_font: montserrat_34
             text_color: my_black
             long_mode: WRAP
-            x: 5
+            x: 6
             y: 24
             text: "AQI:"
         - label:
             id: aqi_value
-            text_font: montserrat_32
+            text_font: montserrat_34
             text_color: my_black
             long_mode: WRAP
             x: 90
@@ -980,30 +978,27 @@ lvgl:
   # CO2 box
         - label:
             id: co2_label
-#            align: LEFT_MID
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 74
+            y: 86
             text: "CO2:"               
         - label:
             id: co2_value
-#            align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 74
+            x: 75
+            y: 76
             text: "0000" 
         - label:
             id: co2_units
-#            align: RIGHT_MID
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 82
+            x: 150
+            y: 86
             text: "PPM"                     
         - line:
             points:
@@ -1018,23 +1013,23 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 131
+            y: 143
             text: "VOC:"               
         - label:
             id: voc_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 131
+            x: 75
+            y: 133
             text: "000.0"               
         - label:
             id: voc_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 139
+            x: 150
+            y: 143
             text: "INDEX"                     
         - line:
             points:
@@ -1049,14 +1044,14 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 190
+            y: 200
             text: "NOx:"              
         - label:
             id: nox_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            x: 75
             y: 190
             text: "000.0" 
         - label:
@@ -1064,8 +1059,8 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 196
+            x: 150
+            y: 200
             text: "PPM"                     
         - line:
             points:
@@ -1080,23 +1075,23 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 245
+            y: 257
             text: "TEMP:"               
         - label:
             id: temperature_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 245
+            x: 75
+            y: 247
             text: "000.0" 
         - label:
             id: temperature_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 253
+            x: 150
+            y: 257
             text: "\u00B0C"
         - line:
             points:
@@ -1111,23 +1106,23 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 302
+            y: 314
             text: "RH:"              
         - label:
             id: rh_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 302
+            x: 75
+            y: 304
             text: "000.0" 
         - label:
             id: rh_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 310
+            x: 150
+            y: 314
             text: "%"
         - line:
             points:
@@ -1142,23 +1137,23 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 359
+            y: 371
             text: "PRES:"              
         - label:
             id: bme280pressure_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 359
+            x: 75
+            y: 361
             text: "0000" 
         - label:
             id: pressure_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 367
+            x: 150
+            y: 371
             text: "hPa"                     
         - line:
             points:
@@ -1173,23 +1168,23 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 416
+            y: 428
             text: "PM1:"               
         - label:
             id: pm1_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 416
+            x: 75
+            y: 418
             text: "000.0" 
         - label:
             id: pm1_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 424
+            x: 150
+            y: 428
             text: "ug/m3"                     
         - line:
             points:
@@ -1204,23 +1199,23 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 473
+            y: 485
             text: "PM2.5:"               
         - label:
             id: pm25_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 473
+            x: 75
+            y: 475
             text: "000.0" 
         - label:
             id: pm25_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 481
+            x: 150
+            y: 485
             text: "ug/m3"                     
         - line:
             points:
@@ -1235,28 +1230,28 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 530
+            y: 542
             text: "PM4:"               
         - label:
             id: pm4_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
-            y: 530
+            x: 75
+            y: 532
             text: "000.0" 
         - label:
             id: pm4_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 538
+            x: 150
+            y: 542
             text: "ug/m3"                     
         - line:
             points:
-              - 0, 270
-              - 180, 270
+              - 0, 583
+              - 180, 583
             line_width: 1
             line_color: 0x00dfff 
 # PM10 box
@@ -1266,14 +1261,14 @@ lvgl:
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: 589
+            y: 599
             text: "PM10:"               
         - label:
             id: pm10_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            x: 75
             y: 589
             text: "000.0" 
         - label:
@@ -1281,6 +1276,6 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 160
-            y: 595
+            x: 150
+            y: 599
             text: "ug/m3"
