@@ -981,7 +981,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 86
             text: "CO2:"
         - label:
@@ -989,15 +989,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 78
+            x: 65
+            y: 79
             text: "0000" 
         - label:
             id: co2_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 86
             text: "PPM"
         - line:
@@ -1012,7 +1012,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 143
             text: "VOC:"               
         - label:
@@ -1020,15 +1020,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 135
+            x: 65
+            y: 136
             text: "000.0"               
         - label:
             id: voc_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 143
             text: "IND"
         - line:
@@ -1043,7 +1043,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 200
             text: "NOx:"              
         - label:
@@ -1051,15 +1051,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 192
+            x: 65
+            y: 193
             text: "000.0" 
         - label:
             id: nox_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 200
             text: "PPM"
         - line:
@@ -1074,7 +1074,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 257
             text: "TMP:"               
         - label:
@@ -1082,15 +1082,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 249
+            x: 65
+            y: 250
             text: "000.0" 
         - label:
             id: temperature_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 257
             text: "\u00B0C"
         - line:
@@ -1105,7 +1105,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 314
             text: "RH:"              
         - label:
@@ -1113,15 +1113,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 306
+            x: 65
+            y: 307
             text: "000.0" 
         - label:
             id: rh_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 314
             text: "%"
         - line:
@@ -1136,7 +1136,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 371
             text: "PRS:"              
         - label:
@@ -1144,15 +1144,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 363
+            x: 65
+            y: 364
             text: "0000" 
         - label:
             id: pressure_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 371
             text: "hPa"                     
         - line:
@@ -1167,7 +1167,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 428
             text: "PM1:"               
         - label:
@@ -1175,15 +1175,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 420
+            x: 65
+            y: 421
             text: "000.0" 
         - label:
             id: pm1_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 428
             text: "ug/m3"                     
         - line:
@@ -1198,7 +1198,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 485
             text: "PM2:"               
         - label:
@@ -1206,15 +1206,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 477
+            x: 65
+            y: 478
             text: "000.0" 
         - label:
             id: pm25_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 485
             text: "ug/m3"                     
         - line:
@@ -1229,7 +1229,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 542
             text: "PM4:"               
         - label:
@@ -1237,15 +1237,15 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 534
+            x: 65
+            y: 535
             text: "000.0" 
         - label:
             id: pm4_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 542
             text: "ug/m3"                     
         - line:
@@ -1260,7 +1260,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: LEFT
+            x: 0
             y: 599
             text: "PM10:"               
         - label:
@@ -1268,14 +1268,14 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            text_align: CENTER
-            y: 591
+            x: 65
+            y: 592
             text: "000.0" 
         - label:
             id: pm10_units
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            text_align: RIGHT
+            x: 155
             y: 599
             text: "ug/m3"
