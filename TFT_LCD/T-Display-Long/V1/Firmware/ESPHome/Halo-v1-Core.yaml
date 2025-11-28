@@ -208,12 +208,12 @@ touchscreen:
 web_server:
   port: 80
 
-image:
-  - file: https://yashmulgaonkar.github.io/assets/YM.png
-    id: ym_logo
-    resize: 25x25
-    type: RGB565
-    transparency: alpha_channel
+#image:
+#  - file: https://yashmulgaonkar.github.io/assets/YM.png
+#    id: ym_logo
+#    resize: 25x25
+#    type: RGB565
+#    transparency: alpha_channel
 
 color:
   - id: my_red
@@ -951,27 +951,27 @@ lvgl:
       bg_color: my_black
       scrollbar_mode: "OFF"
       widgets:
-        - image:
-            id: ym_image          
-            src: ym_logo
-            align: CENTER
-            x: 80
-            y: -309
+#        - image:
+#            id: ym_image          
+#            src: ym_logo
+#            align: CENTER
+#            x: 80
+#            y: -309
         - label:
             id: timeVal
-            align: LEFT_MID
+#            align: LEFT_MID
             text_font: montserrat_18
             text_color: my_white
             x: 2
-            y: -309
+            y: 2
             text: "00:00AM"
         - label:
             id: wifi_stat
-            align: CENTER
+#            align: CENTER
             text_font: montserrat_18
             text_color: my_gray
-            x: 42
-            y: -309
+            x: 170
+            y: 2
             text: "\uF1EB"
 # AQI box
         - obj:
@@ -984,54 +984,54 @@ lvgl:
             border_width: 0
         - label:
             id: aqi_label
-            align: LEFT_MID
+#            align: LEFT_MID
             text_font: montserrat_32
             text_color: my_black
             long_mode: WRAP
             x: 2
-            y: -275
+            y: 28
             text: "AQI:"
         - label:
             id: aqi_value
-            align: LEFT_MID
+  #          align: LEFT_MID
             text_font: montserrat_32
             text_color: my_black
             long_mode: WRAP
             x: 90
-            y: -275
+            y: 28
             text: "000"                              
 # Temperature box
         - label:
             id: temperature_label
-            align: LEFT_MID
+#            align: LEFT_MID
             text_font: montserrat_14
             text_color: my_white
             long_mode: WRAP
             x: 2
-            y: -246
+            y: 74
             text: "TEMP:"               
         - label:
             id: temperature_value
-            align: CENTER
+#            align: CENTER
             text_font: montserrat_28
             text_color: my_white
             long_mode: WRAP
-            x: 0
-            y: -234
+            x: 70
+            y: 74
             text: "000.0" 
         - label:
             id: temperature_units
-            align: RIGHT_MID
+#            align: RIGHT_MID
             text_font: montserrat_14
             text_color: my_white
             long_mode: WRAP
-            x: -8
-            y: -234
+            x: 160
+            y: 82
             text: "\u00B0C"                     
         - line:
             points:
-              - 0, 106
-              - 180, 106
+              - 0, 127
+              - 180, 127
             line_width: 1
             line_color: 0x00dfff
 # CO2 box
