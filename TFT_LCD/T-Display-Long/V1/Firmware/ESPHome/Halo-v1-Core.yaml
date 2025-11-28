@@ -997,7 +997,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 86
             text: "PPM"
         - line:
@@ -1028,7 +1028,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 143
             text: "IND"
         - line:
@@ -1059,7 +1059,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 200
             text: "PPM"
         - line:
@@ -1090,7 +1090,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 257
             text: "\u00B0C"
         - line:
@@ -1121,7 +1121,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 314
             text: "%"
         - line:
@@ -1152,7 +1152,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 371
             text: "hPa"                     
         - line:
@@ -1183,7 +1183,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 428
             text: "ug/m3"                     
         - line:
@@ -1214,7 +1214,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 485
             text: "ug/m3"                     
         - line:
@@ -1245,7 +1245,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 542
             text: "ug/m3"                     
         - line:
@@ -1276,6 +1276,6 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 150
+            x: 140
             y: 599
             text: "ug/m3"
