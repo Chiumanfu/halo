@@ -981,15 +981,15 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            align: left
+            x: 0
             y: 86
-            text: "CO2:"               
+            text: "CO2:"
         - label:
             id: co2_value
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            align: center
+            x: 70
             y: 78
             text: "0000" 
         - label:
@@ -997,7 +997,7 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            align: right
+            x: 135
             y: 86
             text: "PPM"                     
         - line:
