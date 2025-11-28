@@ -981,7 +981,6 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-#            x: 0
             text_align: LEFT
             y: 86
             text: "CO2:"
@@ -990,8 +989,7 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-#            x: 70
-text_align: CENTER
+            text_align: CENTER
             y: 78
             text: "0000" 
         - label:
@@ -999,10 +997,9 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-#            x: 135
             text_align: RIGHT
             y: 86
-            text: "PPM"                     
+            text: "PPM"
         - line:
             points:
               - 0, 127
@@ -1015,7 +1012,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 143
             text: "VOC:"               
         - label:
@@ -1023,7 +1020,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 135
             text: "000.0"               
         - label:
@@ -1031,9 +1028,9 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 135
+            text_align: RIGHT
             y: 143
-            text: "IND"                     
+            text: "IND"
         - line:
             points:
               - 0, 184
@@ -1046,7 +1043,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 200
             text: "NOx:"              
         - label:
@@ -1054,7 +1051,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 192
             text: "000.0" 
         - label:
@@ -1062,9 +1059,9 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 135
+            text_align: RIGHT
             y: 200
-            text: "PPM"                     
+            text: "PPM"
         - line:
             points:
               - 0, 241
@@ -1077,7 +1074,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 257
             text: "TMP:"               
         - label:
@@ -1085,7 +1082,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 249
             text: "000.0" 
         - label:
@@ -1093,7 +1090,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 135
+            text_align: RIGHT
             y: 257
             text: "\u00B0C"
         - line:
@@ -1108,7 +1105,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 314
             text: "RH:"              
         - label:
@@ -1116,7 +1113,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 306
             text: "000.0" 
         - label:
@@ -1124,7 +1121,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 140
+            text_align: RIGHT
             y: 314
             text: "%"
         - line:
@@ -1139,7 +1136,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 371
             text: "PRS:"              
         - label:
@@ -1147,7 +1144,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 363
             text: "0000" 
         - label:
@@ -1155,7 +1152,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 140
+            text_align: RIGHT
             y: 371
             text: "hPa"                     
         - line:
@@ -1170,7 +1167,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 428
             text: "PM1:"               
         - label:
@@ -1178,7 +1175,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 420
             text: "000.0" 
         - label:
@@ -1186,7 +1183,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 140
+            text_align: RIGHT
             y: 428
             text: "ug/m3"                     
         - line:
@@ -1201,7 +1198,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 485
             text: "PM2:"               
         - label:
@@ -1209,7 +1206,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 477
             text: "000.0" 
         - label:
@@ -1217,7 +1214,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 140
+            text_align: RIGHT
             y: 485
             text: "ug/m3"                     
         - line:
@@ -1232,7 +1229,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 542
             text: "PM4:"               
         - label:
@@ -1240,7 +1237,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 534
             text: "000.0" 
         - label:
@@ -1248,7 +1245,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 140
+            text_align: RIGHT
             y: 542
             text: "ug/m3"                     
         - line:
@@ -1263,7 +1260,7 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+            text_align: LEFT
             y: 599
             text: "PM10:"               
         - label:
@@ -1271,7 +1268,7 @@ text_align: CENTER
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+            text_align: CENTER
             y: 591
             text: "000.0" 
         - label:
@@ -1279,6 +1276,6 @@ text_align: CENTER
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 140
+            text_align: RIGHT
             y: 599
             text: "ug/m3"
