@@ -970,14 +970,14 @@ lvgl:
 #            align: CENTER
             text_font: montserrat_18
             text_color: my_gray
-            x: 170
-            y: 2
+            x: 155
+            y: 0
             text: "\uF1EB"
 # AQI box
         - obj:
             id: aqi_widget
             x: 0
-            y: 24
+            y: 22
             width: 180
             height: 42
             bg_color: 0x76fa76
@@ -985,20 +985,20 @@ lvgl:
         - label:
             id: aqi_label
 #            align: LEFT_MID
-            text_font: montserrat_32
+            text_font: montserrat_36
             text_color: my_black
             long_mode: WRAP
             x: 2
-            y: 28
+            y: 24
             text: "AQI:"
         - label:
             id: aqi_value
   #          align: LEFT_MID
-            text_font: montserrat_32
+            text_font: montserrat_36
             text_color: my_black
             long_mode: WRAP
             x: 90
-            y: 28
+            y: 24
             text: "000"                              
 # Temperature box
         - label:
@@ -1064,8 +1064,8 @@ lvgl:
             text: "PPM"                     
         - line:
             points:
-              - 0, 147
-              - 180, 147
+              - 0, 184
+              - 180, 184
             line_width: 1
             line_color: 0x00dfff                              
 # PM1 box
@@ -1098,8 +1098,8 @@ lvgl:
             text: "ug/m3"                     
         - line:
             points:
-              - 0, 188
-              - 180, 188
+              - 0, 241
+              - 180, 241
             line_width: 1
             line_color: 0x00dfff             
 # PM2.5 box
