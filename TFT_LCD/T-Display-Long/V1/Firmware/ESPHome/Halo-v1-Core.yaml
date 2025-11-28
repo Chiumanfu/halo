@@ -453,7 +453,6 @@ sensor:
       name: "BME280 Humidity"
 #      filters:
 #        - lambda: return x - id(bme280_humidity_offset).state;
-      accuracy_decimals: 0
       oversampling: 16x
       accuracy_decimals: 0
       filters:
