@@ -384,7 +384,6 @@ sensor:
     i2c_id: lily_i2c
     temperature:
       name: "BME280 Temperature"
-      accuracy_decimals: 1
       oversampling: 16x
       accuracy_decimals: 1
       filters:
