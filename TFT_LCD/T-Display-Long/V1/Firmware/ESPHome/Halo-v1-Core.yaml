@@ -981,7 +981,8 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 0
+#            x: 0
+            text_align: LEFT
             y: 86
             text: "CO2:"
         - label:
@@ -989,7 +990,8 @@ lvgl:
             text_font: montserrat_32
             text_color: my_white
             long_mode: WRAP
-            x: 70
+#            x: 70
+text_align: CENTER
             y: 78
             text: "0000" 
         - label:
@@ -997,7 +999,8 @@ lvgl:
             text_font: montserrat_20
             text_color: my_white
             long_mode: WRAP
-            x: 135
+#            x: 135
+            text_align: RIGHT
             y: 86
             text: "PPM"                     
         - line:
